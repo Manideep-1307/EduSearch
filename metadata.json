@@ -1,0 +1,7 @@
+{
+  "name": "EduSearch",
+  "description": "Educational Information Retrieval and intelligent study assistant with multi-source search, BM25 & TF-IDF ranking, and AI study notes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

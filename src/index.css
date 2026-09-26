@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #080a0f;
+    --bg-secondary: #0f131c;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+    background-color: #090c12;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* =========================================================
+   AUTHENTIC APPLE iOS 18 LIQUID GLASS DESIGN SYSTEM
+   Directly matching Apple Control Center & VisionOS specs
+   ========================================================= */
+
+/* 1. Large Squircle Glass Slab (Like iOS 18 Music / Connectivity tiles) */
+.apple-liquid-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(40px) saturate(210%) contrast(102%);
+  -webkit-backdrop-filter: blur(40px) saturate(210%) contrast(102%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.25),
+    0 16px 36px -8px rgba(0, 0, 0, 0.45),
+    0 4px 12px -2px rgba(0, 0, 0, 0.25);
+  border-radius: 28px;
+  position: relative;
+}
+
+/* 2. Frosted Glass Capsule / Pill (Like iOS 18 Focus Pill & Segmented Tabs) */
+.apple-liquid-pill {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.06) 100%);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.2),
+    0 10px 25px -4px rgba(0, 0, 0, 0.35);
+  border-radius: 9999px;
+}
+
+/* 3. Liquid Glass Tab Bar Container */
+.apple-glass-tab-bar {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(40px) saturate(210%);
+  -webkit-backdrop-filter: blur(40px) saturate(210%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.3),
+    0 12px 32px -4px rgba(0, 0, 0, 0.4);
+  border-radius: 9999px;
+  padding: 4px;
+}
+
+/* 4. Active Liquid Pill (Apple tactile spring white pill) */
+.apple-glass-tab-active {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 
+    0 4px 18px 0 rgba(255, 255, 255, 0.35),
+    0 2px 4px 0 rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+/* Inactive Liquid Tab */
+.apple-glass-tab-inactive {
+  color: rgba(255, 255, 255, 0.72);
+  background: transparent;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.apple-glass-tab-inactive:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* 5. Liquid Glass Interactive Button / Secondary Control */
+.apple-glass-button {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.3),
+    0 4px 14px -2px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.apple-glass-button:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 100%);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.45),
+    0 6px 20px -2px rgba(0, 0, 0, 0.35);
+  transform: translateY(-0.5px);
+}
+.apple-glass-button:active {
+  transform: scale(0.97);
+}
+
+/* 6. Apple Ambient Glow Refraction (Matching the golden/warm refraction ring on the Focus pill in iOS 18) */
+.apple-glass-refract {
+  position: relative;
+}
+.apple-glass-refract::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(251, 146, 60, 0.25) 45%, rgba(56, 189, 248, 0.15) 75%, rgba(255, 255, 255, 0.15) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* 7. Apple Concentric Wallpaper Background (Directly from iOS 18 screenshot) */
+.apple-ios-wallpaper {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  background-color: #090c12;
+}
+
+.apple-ios-wallpaper::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -15%;
+  width: 70vw;
+  height: 70vw;
+  max-width: 800px;
+  max-height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, 
+    rgba(234, 150, 20, 0.18) 0%, 
+    rgba(217, 119, 6, 0.12) 30%, 
+    rgba(180, 83, 9, 0.06) 55%, 
+    transparent 72%);
+  filter: blur(50px);
+}
+
+.apple-ios-wallpaper::after {
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  left: -10%;
+  width: 60vw;
+  height: 60vw;
+  max-width: 700px;
+  max-height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, 
+    rgba(37, 99, 235, 0.15) 0%, 
+    rgba(79, 70, 229, 0.08) 40%, 
+    transparent 70%);
+  filter: blur(60px);
+}
+
+/* Apple concentric waveform lines (like the amber concentric rings in the user's screenshot) */
+.apple-wallpaper-rings {
+  position: absolute;
+  top: 5%;
+  right: -200px;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  border: 1px solid rgba(245, 158, 11, 0.08);
+  box-shadow: 
+    0 0 0 50px rgba(245, 158, 11, 0.05),
+    0 0 0 100px rgba(245, 158, 11, 0.04),
+    0 0 0 160px rgba(245, 158, 11, 0.03),
+    0 0 0 230px rgba(245, 158, 11, 0.02),
+    0 0 0 310px rgba(245, 158, 11, 0.015);
+  pointer-events: none;
+}
+
+/* Minimal subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
